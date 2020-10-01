@@ -8,9 +8,12 @@ const fs = require('fs');
 
 async function getSideBar() {
     sidebar={}
+    console.log("SIDEBAR VAR: "+process.env.sidebar)
+
     if(process.env.sidebar="true") {
+
         let rawdata = fs.readFileSync('./src/sidebar.json');
-        idebar = JSON.parse(rawdata);
+        sidebar = JSON.parse(rawdata);
     }
 
     return sidebar;
